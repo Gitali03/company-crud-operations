@@ -1,0 +1,63 @@
+.container {
+    display: flex;
+    justify-content: center;
+    height: 120vh;
+    background-color: lightblue;
+    border-radius:5%; 
+
+
+
+}
+.form-container{
+    margin-top: 10px;
+    width: 40vw;
+    border-radius: 10px;
+    height: 80vh;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    }
+.form-control{
+    padding: 7px;
+    border: 1px solid grey;
+    border-radius: 25%;
+}
+.add_button:hover {
+    color: lightblue;
+    cursor: pointer;
+    
+}
+.add_button  {
+    margin-top: 20px;
+
+}
+
+.mb-3{
+    margin-top: 10px;
+
+
+}
+.btn {
+
+    color:white;
+    background-color: green;
+    display: flex;
+    justify-content: center;
+    border-radius: 25%;
+    padding: 5px;
+    cursor: pointer;
+    
+}
+.d-grid{
+    
+    display: flex;
+    justify-content: flex-start;
+}
+table.table.caption-top {
+    border: 1px solid #4b6aad; 
+    margin-top: 20px;  
+    width:100%;   
+}
+
