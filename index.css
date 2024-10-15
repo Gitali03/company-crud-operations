@@ -1,9 +1,10 @@
 .container {
     display: flex;
     justify-content: center;
-    height: 120vh;
+    height: 90vh;
     background-color: lightblue;
     border-radius:5%; 
+
 
 
 
@@ -15,7 +16,7 @@
     height: 80vh;
     padding: 10px;
     display: flex;
-    flex-direction: column;
+    flex-direction:row;
     align-items: center;
 
     }
@@ -55,9 +56,17 @@
     display: flex;
     justify-content: flex-start;
 }
+h3 {
+    display: block;
+}
 table.table.caption-top {
     border: 1px solid #4b6aad; 
     margin-top: 20px;  
     width:100%;   
 }
+.update_form, .create_form {
+    display: none;
+}
+
+
 
