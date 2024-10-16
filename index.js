@@ -22,6 +22,10 @@ function readAll() {
                 <td>${user.age}</td>
                 <td>${user.email}</td>
                 <td>${user.totalSpending} </td>
+                <td>
+                    <button class="edit" onclick={edit(${user.id})}>Edit</button>
+                    <button class="delete">Delete</button>
+                </td>
             </tr>
         `;
     });
@@ -31,6 +35,12 @@ function readAll() {
 
 }
 
+
+function create() {
+    document.querySelector(".create_form").style.display ="block";
+    document.querySelector(".add_button").style.display="none";
+
+}
 
 function add(){
     const name = document.getElementById("name").value;
@@ -43,20 +53,42 @@ function add(){
     const existingUser = users.find(user => user.email === email);
 
     if (existingUser) {
-        // Eğer aynı email adresine sahip bir kullanıcı varsa, hata mesajı döndür
-        console.log("Hata: Bu email adresi ile kayıtlı bir kullanıcı zaten var.");
         alert("Hata: Bu email adresi ile kayıtlı bir kullanıcı zaten var."); // Kullanıcıya hata mesajı göster
         return; // Fonksiyondan çık
     }
    
     users.push(newObj);
+    document.querySelector(".create_form").style.display= "none";
+    document.querySelector(".add_button").style.display="block";
+
     readAll();
-} 
+}
 
-
-
-function create() {
-    document.querySelector(".create_form").style.display ="block";
-    document.querySelector(".add_button").style.display="none";
+function edit(id){
+    document.querySelector('.update_form').style.display= "block";
+    document.querySelector(".create_form").style.display= "none";
+    var obj = users.find (rec => rec.id === id);
+    document.getElementById("uname").value = obj.name;  // İsim alanına kullanıcı ismini yerleştir
+    document.getElementById("usurname").value = obj.surname;  // Soyisim alanına kullanıcı soyadını yerleştir
+    document.getElementById("uemail").value = obj.email;  // Email alanına kullanıcı emailini yerleştir
+    document.getElementById("uage").value = obj.age;  // Yaş alanına kullanıcı yaşını yerleştir
+    document.getElementById("utotalSpending").value = obj.totalSpending; 
+    document.getElementById("id").value = obj.id;
 
 }
+
+function update() {
+    var name = document.getElementById("uname").value 
+    var surname = document.getElementById("usurname").value 
+    var email = document.getElementById("uemail").value
+    var age = document.getElementById("uage").value 
+    var totalSpending =document.getElementById("utotalSpending").value 
+    var id = parseInt(document.getElementById("id").value)
+    var index = users.findIndex(rec => rec.id === id);
+    users[index] = {id, name, surname,email,age,totalSpending};
+
+    document.querySelector('.update_form').style.display = "none";
+    readAll();
+
+}
+

@@ -16,14 +16,24 @@
         <form class="create_form">
           <div class="mb-3">
             <label for="name" class="form-label">Name</label>
-            <input type="text" class="form-control" id="name" placeholder="Enter Name" />
+            <input
+              type="text"
+              class="form-control"
+              id="name"
+              placeholder="Enter Name"
+            />
           </div>
           <div class="mb-3">
-            <label for="lastname" class="form-label">LastName</label>
-            <input type="text" class="form-control" id="surname" placeholder="Enter Lastname" />
+            <label for="surname" class="form-label">Surname</label>
+            <input
+              type="text"
+              class="form-control"
+              id="surname"
+              placeholder="Enter Lastname"
+            />
           </div>
           <div class="mb-3">
-            <label for="email" class="form-label">Email address</label>
+            <label for="email" class="form-label">Email Address</label>
             <input
               type="email"
               class="form-control"
@@ -50,103 +60,115 @@
             />
           </div>
           <div class="d-grid gap-2">
-            <button class="btn btn-primary" type="button" onclick="add()">CREATE</button>
-            
+            <button class="btn btn-primary" type="button" onclick="add()">
+              CREATE
+            </button>
           </div>
-
         </form>
         <form class="update_form">
-            <div class="mb-3">
-              <label for="name" class="form-label">Name</label>
-              <input type="text" class="form-control" id="name" />
-            </div>
-            <div class="mb-3">
-              <label for="email" class="form-label">Email address</label>
-              <input
-                type="email"
-                class="form-control"
-                id="email"
-                placeholder="name@example.com"
-              />
-            </div>
-            <div class="mb-3">
-              <label for="age">Age</label>
-              <input
-                type="number"
-                class="form-control"
-                id="age"
-                placeholder="Please Enter Your Age"
-              />
-            </div>
-            <div class="mb-3">
-              <label for="expenditure">Total Expenditure</label>
-              <input
-                type="number"
-                class="form-control"
-                id="expenditure"
-                placeholder="Please Enter Total Amount Of Your Spending"
-              />
-            </div>
-            <div class="d-grid gap-2">
-                <button class="btn btn-primary" type="button">UPDATE</button>
-            </div>
-          </form>
-          <div  class="add_button">
-            <button type="button" class="btn btn-light" id="addUserButton" onclick="create()">ADD+</button>
+          <div class="mb-3">
+            <input type="text" class="id" id="id" hidden />
           </div>
-          <h3>List of Users</h3>
-          <table class="table caption-top">
-            
-            <thead>
-              <tr>
-                <th scope="col">#</th>
-                <th scope="col">Name</th>
-                <th scope="col">Lastname</th>
-                <th scope="col">Age</th>
-                <th scope="col">E-mail</th>
-                <th scope="col">Expenditure</th>
-              </tr>
-            </thead>
-            <tbody class="data-table">
-              <tr>
-                <th scope="row">1</th>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-              </tr>
-              <tr>
-                <th scope="row">2</th>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-              </tr>
-              <tr>
-                <th scope="row">3</th>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-              </tr>
-              <tr>
-                <th scope="row">4</th>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-              </tr>
-              <tr>
-                <th scope="row">5</th>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-              </tr>
-
-            </tbody>
-           
-          </table>
+          <div class="mb-3">
+            <label for="name" class="form-label">Name</label>
+            <input type="text" class="form-control" id="uname" />
+          </div>
+          <div class="mb-3">
+            <label for="surname" class="form-label">Surname</label>
+            <input type="text" class="form-control" id="usurname" />
+          </div>
+          <div class="mb-3">
+            <label for="email" class="form-label">Email address</label>
+            <input
+              type="email"
+              class="form-control"
+              id="uemail"
+              placeholder="name@example.com"
+            />
+          </div>
+          <div class="mb-3">
+            <label for="age">Age</label>
+            <input
+              type="number"
+              class="form-control"
+              id="uage"
+              placeholder="Please Enter Your Age"
+            />
+          </div>
+          <div class="mb-3">
+            <label for="expenditure">Total Spending</label>
+            <input
+              type="number"
+              class="form-control"
+              id="utotalSpending"
+              placeholder="Please Enter Total Amount Of Your Spending"
+            />
+          </div>
+          <div class="d-grid gap-2">
+            <button class="btn btn-primary" type="button" onclick="update()">UPDATE</button>
+          </div>
+        </form>
+        <div class="add_button">
+          <button
+            type="button"
+            class="btn btn-light"
+            id="addUserButton"
+            onclick="create()"
+          >
+            ADD+
+          </button>
+        </div>
+        <h3 class="table-title"></h3>
+        <table class="table caption-top">
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Name</th>
+              <th scope="col">Lastname</th>
+              <th scope="col">Age</th>
+              <th scope="col">E-mail</th>
+              <th scope="col">Total Spending</th>
+              <th scope="col">Action</th>
+            </tr>
+          </thead>
+          <tbody class="data-table">
+            <tr>
+              <th scope="row">1</th>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <th scope="row">2</th>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <th scope="row">3</th>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <th scope="row">4</th>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <th scope="row">5</th>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+          </tbody>
+        </table>
       </div>
     </div>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>

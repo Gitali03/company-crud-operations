@@ -16,14 +16,19 @@
     height: 80vh;
     padding: 10px;
     display: flex;
-    flex-direction:row;
+    flex-direction: row;
     align-items: center;
+    justify-content: center;
+    
 
     }
 .form-control{
+    width: 100%;
     padding: 7px;
     border: 1px solid grey;
     border-radius: 25%;
+    width:51vh;
+    
 }
 .add_button:hover {
     color: lightblue;
@@ -56,17 +61,89 @@
     display: flex;
     justify-content: flex-start;
 }
-h3 {
-    display: block;
-}
-table.table.caption-top {
-    border: 1px solid #4b6aad; 
-    margin-top: 20px;  
-    width:100%;   
+
+.create_form{
+    margin-right: 50px;
 }
 .update_form, .create_form {
     display: none;
 }
 
+.table-title {
+    text-align: center;
+    color:red;
+    display: inline-block;
+}
 
+table.table.caption-top {
+    width: 100%;
+    border-radius: 25px;
+    border:none;
+    margin-top: 20px;  
+    text-align: center;  
+    caption-side: top; 
+    caption {
+        text-align: center;
+        font-weight: bold;
+        font-size: 1.5rem;
+        color: red;
+    }
+    th {
+        background-color: #f5f5f5;
+        color: #333;
+        padding: 10px;
+    }
+    td {
+        padding: 10px;
+        border: 1px solid #ddd;
+    }
+    tr:nth-child(even) {
+        background-color: #f9f9f9;
+    }
+    tr:hover {
+        background-color: #40e0d0; 
+    }
+}
+/* Genel buton stilleri */
+table .edit, table .delete {
+    padding: 5px 10px; /* Buton içeriği için boşluk */
+    border: none; /* Buton kenarlıklarını kaldır */
+    border-radius: 5px; /* Köşeleri yuvarlat */
+    cursor: pointer; /* Buton üzerine gelince el simgesi göster */
+    margin-right: 5px; /* Butonlar arası boşluk */
+    font-size: 14px; /* Buton yazı boyutu */
+    transition: background-color 0.3s ease; /* Renk değişimi için animasyon */
+    
+}
 
+/* Edit butonunun stili */
+table .edit {
+    background-color: #4CAF50; /* Yeşil buton rengi */
+    color: white; /* Beyaz yazı */
+}
+
+table .edit:hover {
+    background-color: #45a049; /* Üzerine gelindiğinde daha koyu yeşil */
+}
+
+/* Delete butonunun stili */
+table .delete {
+    background-color: #f44336; /* Kırmızı buton rengi */
+    color: white; /* Beyaz yazı */
+}
+
+table .delete:hover {
+    background-color: #e53935; /* Üzerine gelindiğinde daha koyu kırmızı */
+}
+
+/* Butonların tablo içindeki hizası */
+td {
+    text-align: center; /* Butonları ortala */
+    vertical-align: middle; /* Butonları dikey ortala */
+}
+
+/* Tablodaki hücre içi butonların genişliği ve hizası */
+td button {
+    display: inline-block;
+    min-width: 70px; /* Minimum buton genişliği */
+}
