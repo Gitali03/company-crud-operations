@@ -10,7 +10,12 @@
     />
     <link rel="stylesheet" href="index.css" />
   </head>
-  <body onload="readAll()">
+  <body>
+    <div class="search-btn">
+      <label for="search">All Users Listed According to Name: </label>
+      <input type="search" id="search" placeholder="Please ENTER Name..." />
+    </div>
+
     <div class="container">
       <div class="form-container">
         <form class="create_form">
@@ -105,70 +110,93 @@
             />
           </div>
           <div class="d-grid gap-2">
-            <button class="btn btn-primary" type="button" onclick="update()">UPDATE</button>
+            <button class="btn btn-primary" type="button" onclick="update()">
+              UPDATE
+            </button>
           </div>
         </form>
+
         <div class="add_button">
           <button
             type="button"
-            class="btn btn-light"
+            class="btn btn-light btn-custom"
             id="addUserButton"
             onclick="create()"
           >
             ADD+
           </button>
         </div>
+
         <h3 class="table-title"></h3>
-        <table class="table caption-top">
-          <thead>
-            <tr>
-              <th scope="col">#</th>
-              <th scope="col">Name</th>
-              <th scope="col">Lastname</th>
-              <th scope="col">Age</th>
-              <th scope="col">E-mail</th>
-              <th scope="col">Total Spending</th>
-              <th scope="col">Action</th>
-            </tr>
-          </thead>
-          <tbody class="data-table">
-            <tr>
-              <th scope="row">1</th>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <th scope="row">2</th>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <th scope="row">3</th>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <th scope="row">4</th>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <th scope="row">5</th>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-          </tbody>
-        </table>
+
+        <div class="table-container">
+          <table class="table caption-top rounded-table">
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Name</th>
+                <th scope="col">Lastname</th>
+                <th scope="col">Age</th>
+                <th scope="col">E-mail</th>
+                <th scope="col">Total Spending</th>
+                <th scope="col">Action</th>
+              </tr>
+            </thead>
+            <tbody class="data-table">
+              <tr>
+                <th scope="row">1</th>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <th scope="row">2</th>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <th scope="row">3</th>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <th scope="row">4</th>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <th scope="row">5</th>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+            </tbody>
+            <tfoot class="">
+              <tr>
+                <th colspan="6">Toplam Harcamalar</th>
+                <td id="toplamHarcama"></td>
+              </tr>
+              <tr>
+                <th colspan="6">18 Yas alti Kullanicilar</th>
+                <td id="under18"></td>
+              </tr>
+              <tr>
+                <th colspan="6">Yas Ortalama</th>
+                <td id="averageAge"></td>
+              </tr>
+            </tfoot>
+          </table>
+        </div>
+
+        
       </div>
     </div>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>

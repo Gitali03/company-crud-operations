@@ -1,149 +1,248 @@
-.container {
-    display: flex;
-    justify-content: center;
-    height: 90vh;
-    background-color: lightblue;
-    border-radius:5%; 
-
-
-
-
+.main-container {
+  border-radius: 25%;
 }
-.form-container{
-    margin-top: 10px;
-    width: 40vw;
-    border-radius: 10px;
-    height: 80vh;
-    padding: 10px;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    
 
-    }
-.form-control{
-    width: 100%;
-    padding: 7px;
-    border: 1px solid grey;
-    border-radius: 25%;
-    width:51vh;
-    
+.container {
+  display: flex;
+  justify-content: center;
+  border-radius: 5%;
+  margin-top:100px;
+}
+
+.form-container {
+  margin-top: 10px;
+  width: 40vw;
+  border-radius: 10px;
+  height: 80vh;
+  padding: 10px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.form-control {
+  width: 100%;
+  padding: 7px;
+  border: 1px solid grey;
+  border-radius: 25%;
+  width: 51vh;
 }
 .add_button:hover {
-    color: lightblue;
-    cursor: pointer;
-    
+  color: lightblue;
+  cursor: pointer;
 }
-.add_button  {
-    margin-top: 20px;
-
+.add_button {
+  margin-left: 20px;
+  margin-right: 25px;
 }
 
-.mb-3{
-    margin-top: 10px;
+.btn-custom {
+  width: 100px;
+  background-color: #f8f9fa; /* Açık arka plan rengi */
+  color: #343a40; /* Koyu metin rengi */
+  border: 2px solid #343a40; /* Kenarlık rengi */
+  border-radius: 20%; /* Köşe yuvarlama */
+  padding: 10px 20px; /* İç boşluk */
+  font-size: 16px; /* Yazı boyutu */
+  transition: background-color 0.3s, color 0.3s; /* Geçiş efekti */
+}
 
+.btn-custom:hover {
+  background-color: lightblue; /* Hover durumunda arka plan rengi */
+  color: #ffffff; /* Hover durumunda metin rengi */
+}
 
+.mb-3 {
+  margin-top: 10px;
 }
 .btn {
-
-    color:white;
-    background-color: green;
-    display: flex;
-    justify-content: center;
-    border-radius: 25%;
-    padding: 5px;
-    cursor: pointer;
-    
+  color: white;
+  background-color: green;
+  display: flex;
+  justify-content: center;
+  border-radius: 25%;
+  padding: 5px;
+  cursor: pointer;
 }
-.d-grid{
-    
-    display: flex;
-    justify-content: flex-start;
+.d-grid {
+  display: flex;
+  justify-content: flex-start;
 }
 
-.create_form{
-    margin-right: 50px;
+.create_form {
+  margin-right: 50px;
 }
-.update_form, .create_form {
-    display: none;
+.update_form,
+.create_form {
+  display: none;
+  margin-right: 25px;
 }
 
 .table-title {
-    text-align: center;
-    color:red;
-    display: inline-block;
+  text-align: center;
+  color: red;
+  display: inline-block;
 }
 
 table.table.caption-top {
-    width: 100%;
-    border-radius: 25px;
-    border:none;
-    margin-top: 20px;  
-    text-align: center;  
-    caption-side: top; 
-    caption {
-        text-align: center;
-        font-weight: bold;
-        font-size: 1.5rem;
-        color: red;
-    }
-    th {
-        background-color: #f5f5f5;
-        color: #333;
-        padding: 10px;
-    }
-    td {
-        padding: 10px;
-        border: 1px solid #ddd;
-    }
-    tr:nth-child(even) {
-        background-color: #f9f9f9;
-    }
-    tr:hover {
-        background-color: #40e0d0; 
-    }
+  width: 100%;
+  border-radius: 25px;
+  border: none;
+  margin-top: 20px;
+  text-align: center;
+  caption-side: top;
+  caption {
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.5rem;
+    color: red;
+  }
+  th {
+    background-color: #f5f5f5;
+    color: #333;
+    padding: 10px;
+  }
+  td {
+    padding: 10px;
+    border: 1px solid #ddd;
+  }
+  tr:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+  tr:hover {
+    background-color: #40e0d0;
+  }
 }
 /* Genel buton stilleri */
-table .edit, table .delete {
-    padding: 5px 10px; /* Buton içeriği için boşluk */
-    border: none; /* Buton kenarlıklarını kaldır */
-    border-radius: 5px; /* Köşeleri yuvarlat */
-    cursor: pointer; /* Buton üzerine gelince el simgesi göster */
-    margin-right: 5px; /* Butonlar arası boşluk */
-    font-size: 14px; /* Buton yazı boyutu */
-    transition: background-color 0.3s ease; /* Renk değişimi için animasyon */
-    
+table .edit,
+table .delete {
+  padding: 5px 10px; /* Buton içeriği için boşluk */
+  border: none; /* Buton kenarlıklarını kaldır */
+  border-radius: 5px; /* Köşeleri yuvarlat */
+  cursor: pointer; /* Buton üzerine gelince el simgesi göster */
+  margin-right: 5px; /* Butonlar arası boşluk */
+  font-size: 14px; /* Buton yazı boyutu */
+  transition: background-color 0.3s ease; /* Renk değişimi için animasyon */
+  margin-top: 5px;
 }
 
 /* Edit butonunun stili */
 table .edit {
-    background-color: #4CAF50; /* Yeşil buton rengi */
-    color: white; /* Beyaz yazı */
+  background-color: #4caf50; /* Yeşil buton rengi */
+  color: white; /* Beyaz yazı */
 }
 
 table .edit:hover {
-    background-color: #45a049; /* Üzerine gelindiğinde daha koyu yeşil */
+  background-color: #45a049; /* Üzerine gelindiğinde daha koyu yeşil */
 }
 
 /* Delete butonunun stili */
 table .delete {
-    background-color: #f44336; /* Kırmızı buton rengi */
-    color: white; /* Beyaz yazı */
+  background-color: #f44336;
+  color: white;
 }
 
 table .delete:hover {
-    background-color: #e53935; /* Üzerine gelindiğinde daha koyu kırmızı */
+  background-color: #e53935; /* Üzerine gelindiğinde daha koyu kırmızı */
 }
 
 /* Butonların tablo içindeki hizası */
 td {
-    text-align: center; /* Butonları ortala */
-    vertical-align: middle; /* Butonları dikey ortala */
+  text-align: center; /* Butonları ortala */
+  vertical-align: middle; /* Butonları dikey ortala */
 }
 
 /* Tablodaki hücre içi butonların genişliği ve hizası */
 td button {
-    display: inline-block;
-    min-width: 70px; /* Minimum buton genişliği */
+  display: inline-block;
+  min-width: 70px; /* Minimum buton genişliği */
+}
+
+.rounded-table {
+  border: 1px solid #ddd; /* Tablonun kenarlarına ince bir çerçeve ekler */
+  border-radius: 25%; /* Köşeleri 10px yuvarlatır */
+  overflow: hidden; /* Kenar yuvarlamalarının düzgün görünmesi için gerekli */
+}
+
+.rounded-table thead {
+  background-color: #f8f9fa; /* Tablonun başlık kısmına açık gri arka plan */
+}
+
+.rounded-table th,
+.rounded-table td {
+  padding: 10px; /* Hücrelere boşluk ekler */
+  /* Yazıları sola hizalar */
+}
+
+.rounded-table th {
+  font-weight: bold; /* Başlık kısmını kalın yapar */
+}
+.search-btn {
+  display: flex;
+  justify-content: center;
+}
+
+.search-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 20px 0; /* Üst ve alt kenar boşlukları */
+}
+
+/* Arama etiketi için stil */
+.search-btn label {
+  margin-right: 10px; /* Sağ boşluk */
+  font-weight: bold; /* Kalın yazı tipi */
+}
+
+/* Arama input'u için stil */
+.search-btn input[type="text"] {
+  padding: 10px;
+  border: 1px solid #ced4da; /* Kenar rengi */
+  border-radius: 25%; /* Kenar yuvarlama */
+  width: 250px; /* Genişlik */
+  transition: border-color 0.3s; /* Kenar rengi geçişi */
+}
+
+/* Arama input'u odaklandığında stil */
+.search-btn input[type="text"]:focus {
+  border-color: #007bff; /* Odak rengi */
+  outline: none; /* Kenar dışı çizgisi yok */
+}
+
+/* Arama butonu için stil */
+.search-btn button {
+  padding: 10px 15px;
+  background-color: #007bff; /* Buton arka plan rengi */
+  color: white; /* Buton yazı rengi */
+  border: none; /* Kenar yok */
+  border-radius: 25%; /* Kenar yuvarlama */
+  margin-left: 10px; /* Sol boşluk */
+  cursor: pointer; /* Fare işareti */
+  transition: background-color 0.3s; /* Arka plan rengi geçişi */
+}
+
+/* Buton üzerinde durulduğunda stil */
+.search-btn button:hover {
+  background-color: lightblue; /* Hover rengi */
+}
+
+.parag {
+  width: 50%;
+  margin: 10px auto; /* Üst ve alt kenar boşlukları */
+  padding: 15px; /* İç boşluk */
+  background-color: #f8f9fa; /* Arka plan rengi */
+  border: 1px solid #ced4da; /* Kenar rengi */
+  border-radius: 50%; /* Kenar yuvarlama */
+  font-size: 16px; /* Yazı boyutu */
+  color: #333; /* Yazı rengi */
+  line-height: 1.5; /* Satır yüksekliği */
+  text-align: center; /* Metin hizalaması */
+}
+
+/* Sonuç bulunamadı mesajı için özel stil ayarları */
+.parag.no-result {
+  background-color: #f8d7da; /* Hata arka plan rengi */
+  color: #721c24; /* Hata yazı rengi */
+  border-color: #f5c6cb; /* Hata kenar rengi */
 }
