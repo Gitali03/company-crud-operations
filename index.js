@@ -9,27 +9,31 @@ function create() {
 }
 
 function add() {
-  const name = document.getElementById("name").value;
-   if(name === '') {
-   return alert("Error: name is required")
+  const name = document.getElementById("name").value.trim();
+  if (name === "" || /\d/.test(name)) {
+    alert("Error: name is required and cannot contain numbers.");
+    return;
   }
-  
-  const surname = document.getElementById("surname").value;
-  if(surname === '') {
-    return alert("Error: surname is required")
+  const surname = document.getElementById("surname").value.trim();
+  if (surname === "" || /\d/.test(surname)) {
+    alert("Error: Surname is required and cannot contain numbers.");
+    return;
   }
-  
+
   const age = parseInt(document.getElementById("age").value);
   if (isNaN(age) || age <= 0) {
     alert("Error: Please enter a valid age greater than 0.");
     return;
   }
-  const email = document.getElementById("email").value;
-  if(email === '') {
-    return alert("Error:  email is required")
+  const email = document.getElementById("email").value.trim();
+  if (email === "" || !email.includes("@")) {
+    alert("Error: Email address cannot be empty and must contain '@'.");
+    return;
   }
-  
-  
+  if (email === "") {
+    return alert("Error:  email is required");
+  }
+
   const totalSpending = parseInt(
     document.getElementById("totalSpending").value
   );
@@ -52,7 +56,7 @@ function add() {
     age: Number(age),
     totalSpending: Number(totalSpending),
   };
-  
+
   users.push(newObj);
   document.querySelector(".create_form").style.display = "none";
   document.querySelector(".add_button").style.display = "block";
@@ -79,22 +83,21 @@ function edit(email) {
 
 function update() {
   let name = document.getElementById("uname").value.trim();
-  if(name === '') {
-    return alert("Error: name is required")
+  if (name === "" || /\d/.test(name)) {
+    alert("Error: name is required and cannot contain numbers.");
+    return;
   }
   let surname = document.getElementById("usurname").value.trim();
-  if(surname === '') {
-    return alert("Error: Surname is required")
+  if (surname === "" || /\d/.test(surname)) {
+    alert("Error: Surname is required and cannot contain numbers.");
+    return;
   }
   let email = document.getElementById("uemail").value.trim();
-  if(email === '') {
-    return alert("Error: e-mail is required")
+  if (email === "" || !email.includes("@")) {
+    alert("Error: Email address cannot be empty and must contain '@'.");
+    return;
   }
-  //const existingUser = users.find((user) => user.email === email);
- // if (existingUser) {
-    //alert("Error: A user with this email already exists.");
-   // return;
-  //}
+
   let age = document.getElementById("uage").value;
   if (isNaN(age) || age <= 0) {
     alert("Error: Please enter a valid age greater than 0.");
@@ -161,7 +164,7 @@ function readAll() {
     let allTotal = 0;
     let under18Count = 0;
     let allAge = 0;
-    
+
     innerUsers.forEach((user) => {
       allTotal += Number(user.totalSpending);
       allAge += Number(user.age);
@@ -223,13 +226,8 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   console.log(users);
-  
 
   searchInput.addEventListener("input", readAll);
 
   readAll();
 });
-
- 
-
-
