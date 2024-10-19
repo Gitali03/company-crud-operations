@@ -1,22 +1,24 @@
 .main-container {
-  border-radius: 25%;
+  
+  
 }
 
 .container {
   display: flex;
   justify-content: center;
   border-radius: 5%;
-  margin-top:100px;
+  
+
 }
 
 .form-container {
-  margin-top: 10px;
-  width: 40vw;
-  border-radius: 10px;
+  margin-top: 50px;
+  width: 120vw;
+  border-radius: 1px;
   height: 80vh;
   padding: 10px;
   display: flex;
-  flex-direction: row;
+  flex-direction:row;
   align-items: center;
   justify-content: center;
 }
@@ -38,18 +40,18 @@
 
 .btn-custom {
   width: 100px;
-  background-color: #f8f9fa; /* Açık arka plan rengi */
-  color: #343a40; /* Koyu metin rengi */
-  border: 2px solid #343a40; /* Kenarlık rengi */
-  border-radius: 20%; /* Köşe yuvarlama */
-  padding: 10px 20px; /* İç boşluk */
-  font-size: 16px; /* Yazı boyutu */
-  transition: background-color 0.3s, color 0.3s; /* Geçiş efekti */
+  background-color: #f8f9fa; 
+  color: #343a40; 
+  border: 2px solid #343a40; 
+  border-radius: 20%; 
+  padding: 10px 20px; 
+  font-size: 16px; 
+  transition: background-color 0.3s, color 0.3s; 
 }
 
 .btn-custom:hover {
-  background-color: lightblue; /* Hover durumunda arka plan rengi */
-  color: #ffffff; /* Hover durumunda metin rengi */
+  background-color: lightblue; 
+  color: #ffffff; 
 }
 
 .mb-3 {
@@ -69,6 +71,7 @@
   justify-content: flex-start;
 }
 
+
 .create_form {
   margin-right: 50px;
 }
@@ -80,13 +83,11 @@
 
 .table-title {
   text-align: center;
-  color: red;
   display: inline-block;
 }
 
 table.table.caption-top {
   width: 100%;
-  border-radius: 25px;
   border: none;
   margin-top: 20px;
   text-align: center;
@@ -95,154 +96,148 @@ table.table.caption-top {
     text-align: center;
     font-weight: bold;
     font-size: 1.5rem;
-    color: red;
   }
   th {
     background-color: #f5f5f5;
     color: #333;
-    padding: 10px;
+    padding: 7px;
   }
   td {
-    padding: 10px;
+    padding: 7px;
     border: 1px solid #ddd;
   }
   tr:nth-child(even) {
     background-color: #f9f9f9;
   }
   tr:hover {
-    background-color: #40e0d0;
+    background-color:lightblue;
   }
 }
 /* Genel buton stilleri */
 table .edit,
 table .delete {
-  padding: 5px 10px; /* Buton içeriği için boşluk */
-  border: none; /* Buton kenarlıklarını kaldır */
-  border-radius: 5px; /* Köşeleri yuvarlat */
-  cursor: pointer; /* Buton üzerine gelince el simgesi göster */
-  margin-right: 5px; /* Butonlar arası boşluk */
-  font-size: 14px; /* Buton yazı boyutu */
-  transition: background-color 0.3s ease; /* Renk değişimi için animasyon */
+  padding: 5px 10px; 
+  border: 1px solid; 
+  cursor:pointer;
+  justify-content: space-between;
+  border-radius: 25%;
+  margin-right: 5px; 
+  font-size: 14px; 
+  transition: background-color 0.3s ease; 
   margin-top: 5px;
 }
 
-/* Edit butonunun stili */
+
 table .edit {
-  background-color: #4caf50; /* Yeşil buton rengi */
-  color: white; /* Beyaz yazı */
+  background-color: rgb(81, 182, 215); 
+  color: white;/
 }
 
 table .edit:hover {
-  background-color: #45a049; /* Üzerine gelindiğinde daha koyu yeşil */
+  background-color: darkgreen; 
 }
 
-/* Delete butonunun stili */
+
 table .delete {
-  background-color: #f44336;
-  color: white;
+  background-color:#ff4d4d;
+  color:white;
 }
 
 table .delete:hover {
-  background-color: #e53935; /* Üzerine gelindiğinde daha koyu kırmızı */
+
+  background-color: darkred;
 }
 
-/* Butonların tablo içindeki hizası */
+
 td {
-  text-align: center; /* Butonları ortala */
-  vertical-align: middle; /* Butonları dikey ortala */
+  text-align: center; 
+  vertical-align: middle; 
 }
 
-/* Tablodaki hücre içi butonların genişliği ve hizası */
+
 td button {
   display: inline-block;
-  min-width: 70px; /* Minimum buton genişliği */
+  min-width: 70px; 
 }
 
 .rounded-table {
-  border: 1px solid #ddd; /* Tablonun kenarlarına ince bir çerçeve ekler */
-  border-radius: 25%; /* Köşeleri 10px yuvarlatır */
-  overflow: hidden; /* Kenar yuvarlamalarının düzgün görünmesi için gerekli */
+  margin-top: 50px;
+  border-radius: 5%;
+  border: 1px solid #ddd;
+  overflow: hidden;
+
+  
 }
 
 .rounded-table thead {
-  background-color: #f8f9fa; /* Tablonun başlık kısmına açık gri arka plan */
+  background-color: #021c35; 
 }
 
 .rounded-table th,
 .rounded-table td {
-  padding: 10px; /* Hücrelere boşluk ekler */
-  /* Yazıları sola hizalar */
+  padding: 10px; 
 }
 
 .rounded-table th {
-  font-weight: bold; /* Başlık kısmını kalın yapar */
+  font-weight: bold; 
 }
-.search-btn {
-  display: flex;
-  justify-content: center;
-}
-
 .search-btn {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 20px 0; /* Üst ve alt kenar boşlukları */
+  margin: 20px 0; 
+  font-family: Arial, sans-serif; 
 }
 
-/* Arama etiketi için stil */
 .search-btn label {
-  margin-right: 10px; /* Sağ boşluk */
-  font-weight: bold; /* Kalın yazı tipi */
+  margin-left: 135px;
+  margin-right: 10px; 
+  font-weight: bold; 
 }
 
-/* Arama input'u için stil */
-.search-btn input[type="text"] {
-  padding: 10px;
-  border: 1px solid #ced4da; /* Kenar rengi */
-  border-radius: 25%; /* Kenar yuvarlama */
-  width: 250px; /* Genişlik */
-  transition: border-color 0.3s; /* Kenar rengi geçişi */
+.search-btn input[type="search"] {
+  padding: 10px; 
+  border: 1px solid #ccc; 
+  border-radius: 25%; 
+  font-size: 16px; 
+  width: 100%; 
+  max-width: 400px; 
+  transition: border-color 0.3s; 
 }
 
-/* Arama input'u odaklandığında stil */
-.search-btn input[type="text"]:focus {
-  border-color: #007bff; /* Odak rengi */
-  outline: none; /* Kenar dışı çizgisi yok */
+.search-btn input[type="search"]:focus {
+  border-color: #007BFF; 
+  outline: none; 
 }
 
-/* Arama butonu için stil */
-.search-btn button {
-  padding: 10px 15px;
-  background-color: #007bff; /* Buton arka plan rengi */
-  color: white; /* Buton yazı rengi */
-  border: none; /* Kenar yok */
-  border-radius: 25%; /* Kenar yuvarlama */
-  margin-left: 10px; /* Sol boşluk */
-  cursor: pointer; /* Fare işareti */
-  transition: background-color 0.3s; /* Arka plan rengi geçişi */
+.search-btn input[type="search"]::placeholder {
+  color: #aaa; 
+  font-style: italic; 
 }
 
-/* Buton üzerinde durulduğunda stil */
-.search-btn button:hover {
-  background-color: lightblue; /* Hover rengi */
-}
 
-.parag {
-  width: 50%;
-  margin: 10px auto; /* Üst ve alt kenar boşlukları */
-  padding: 15px; /* İç boşluk */
-  background-color: #f8f9fa; /* Arka plan rengi */
-  border: 1px solid #ced4da; /* Kenar rengi */
-  border-radius: 50%; /* Kenar yuvarlama */
+/* Tablonun tfoot kısmına stil verme */
+.footer {
+  background-color: #e8ecf0; /* Açık gri arka plan */
+  font-weight: bold; /* Kalın yazı */
+  text-align: left;
   font-size: 16px; /* Yazı boyutu */
-  color: #333; /* Yazı rengi */
-  line-height: 1.5; /* Satır yüksekliği */
-  text-align: center; /* Metin hizalaması */
+  padding: 10px 0; /* Üst ve alt kenar boşluğu */
+  border-top: 2px solid #dee2e6; /* Üst kenar çizgisi */
+
 }
 
-/* Sonuç bulunamadı mesajı için özel stil ayarları */
-.parag.no-result {
-  background-color: #f8d7da; /* Hata arka plan rengi */
-  color: #721c24; /* Hata yazı rengi */
-  border-color: #f5c6cb; /* Hata kenar rengi */
+.footer td, .footer th {
+  padding: 10px 15px; 
+  
 }
+
+.footer td {
+  text-align: center;
+  
+}
+
+
+
+
+

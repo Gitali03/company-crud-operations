@@ -9,6 +9,7 @@
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
     />
     <link rel="stylesheet" href="index.css" />
+    <link rel="stylesheet" href="reset.css" />
   </head>
   <body>
     <div class="search-btn">
@@ -38,7 +39,7 @@
             />
           </div>
           <div class="mb-3">
-            <label for="email" class="form-label">Email Address</label>
+            <label for="email" id="email-label">Email Address</label>
             <input
               type="email"
               class="form-control"
@@ -179,17 +180,17 @@
                 <td></td>
               </tr>
             </tbody>
-            <tfoot class="">
+            <tfoot class="footer">
               <tr>
-                <th colspan="6">Toplam Harcamalar</th>
-                <td id="toplamHarcama"></td>
+                <th colspan="6"> Average Total Spending</th>
+                <td id="totalExpenditure"></td>
               </tr>
               <tr>
-                <th colspan="6">18 Yas alti Kullanicilar</th>
+                <th colspan="6">Users Under 18</th>
                 <td id="under18"></td>
               </tr>
               <tr>
-                <th colspan="6">Yas Ortalama</th>
+                <th colspan="6">Average Age</th>
                 <td id="averageAge"></td>
               </tr>
             </tfoot>

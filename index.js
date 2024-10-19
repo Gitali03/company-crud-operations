@@ -10,36 +10,49 @@ function create() {
 
 function add() {
   const name = document.getElementById("name").value;
+   if(name === '') {
+   return alert("Error: name is required")
+  }
+  
   const surname = document.getElementById("surname").value;
+  if(surname === '') {
+    return alert("Error: surname is required")
+  }
+  
   const age = parseInt(document.getElementById("age").value);
   if (isNaN(age) || age <= 0) {
     alert("Error: Please enter a valid age greater than 0.");
     return;
   }
   const email = document.getElementById("email").value;
-  const totalSpending = parseFloat(
+  if(email === '') {
+    return alert("Error:  email is required")
+  }
+  
+  
+  const totalSpending = parseInt(
     document.getElementById("totalSpending").value
   );
   if (totalSpending <= 0 || isNaN(totalSpending)) {
     alert("Error: Total spending cannot be 0 or a negative value.");
     return;
   }
-  var newId = users.length + 1;
-  var newObj = {
-    id: newId,
-    name: name,
-    surname: surname,
-    email: email,
-    age: age,
-    totalSpending: totalSpending,
-  };
   const existingUser = users.find((user) => user.email === email);
-
   if (existingUser) {
     alert("Error: A user with this email already exists.");
     return;
   }
 
+  let newId = users.length + 1;
+  let newObj = {
+    id: newId,
+    name: name,
+    surname: surname,
+    email: email,
+    age: Number(age),
+    totalSpending: Number(totalSpending),
+  };
+  
   users.push(newObj);
   document.querySelector(".create_form").style.display = "none";
   document.querySelector(".add_button").style.display = "block";
@@ -48,7 +61,7 @@ function add() {
 }
 
 function edit(email) {
-  addUserButton.style.display = 'none';
+  addUserButton.style.display = "none";
   document.querySelector(".update_form").style.display = "block";
   document.querySelector(".create_form").style.display = "none";
   var obj = users.find((user) => user.email === email);
@@ -61,26 +74,44 @@ function edit(email) {
     alert("Error: Total spending cannot be 0 or a negative value.");
     return;
   }
-  document.getElementById("id").value = obj.id; 
+  document.getElementById("id").value = obj.id;
 }
 
 function update() {
-  var name = document.getElementById("uname").value;
-  var surname = document.getElementById("usurname").value;
-  var email = document.getElementById("uemail").value;
-  var age = document.getElementById("uage").value;
-  var totalSpending = document.getElementById("utotalSpending").value;
+  let name = document.getElementById("uname").value.trim();
+  if(name === '') {
+    return alert("Error: name is required")
+  }
+  let surname = document.getElementById("usurname").value.trim();
+  if(surname === '') {
+    return alert("Error: Surname is required")
+  }
+  let email = document.getElementById("uemail").value.trim();
+  if(email === '') {
+    return alert("Error: e-mail is required")
+  }
+  //const existingUser = users.find((user) => user.email === email);
+ // if (existingUser) {
+    //alert("Error: A user with this email already exists.");
+   // return;
+  //}
+  let age = document.getElementById("uage").value;
+  if (isNaN(age) || age <= 0) {
+    alert("Error: Please enter a valid age greater than 0.");
+    return;
+  }
+  let totalSpending = document.getElementById("utotalSpending").value;
   if (totalSpending <= 0 || isNaN(totalSpending)) {
     alert("Error: Total spending cannot be 0 or a negative value.");
     return;
   }
-  var id = parseInt(document.getElementById("id").value);
-  var index = users.findIndex((rec) => rec.id === id);
+  let id = parseInt(document.getElementById("id").value);
+  let index = users.findIndex((rec) => rec.id === id);
   users[index] = { id, name, surname, email, age, totalSpending };
 
   document.querySelector(".update_form").style.display = "none";
   readAll();
-  addUserButton.setAttribute("style", '')
+  addUserButton.setAttribute("style", "");
 }
 
 function del(email) {
@@ -89,20 +120,19 @@ function del(email) {
   readAll();
 }
 
-
 function readAll() {
   const searchValue = searchInput.value.toLowerCase();
 
   const innerUsers = users
     .sort((a, b) => a.age - b.age)
-    .filter(user => user.name.toLowerCase().includes(searchValue));
+    .filter((user) => user.name.toLowerCase().includes(searchValue));
   // let object = localStorage.getItem("object");
   // let objectdata = JSON.parse(object);
   let elements = "";
-  if(searchValue && innerUsers.length === 0) {
+  if (searchValue && innerUsers.length === 0) {
     elements = `<tr>
-      <td colspan="7">Sonuc bulunamadi</td>
-    </tr>`
+      <td colspan="7">No Result</td>
+    </tr>`;
   } else {
     innerUsers.forEach((user, index) => {
       elements += `<tr>
@@ -113,7 +143,7 @@ function readAll() {
         <td>${user.email}</td>
         <td>${user.totalSpending} </td>
         <td>
-          <button class="edit" onclick={edit('${user.email}')}>Edit</button>
+          <button class="edit" onclick="edit('${user.email}')">Edit</button>
           <button class="delete" onclick="del('${user.email}')">Delete</button>
         </td>
       </tr>`;
@@ -123,38 +153,36 @@ function readAll() {
   let tabledata = document.querySelector(".data-table");
   tabledata.innerHTML = elements;
 
-  const toplamHarcama = document.querySelector("#toplamHarcama");
+  const totalExpenditure = document.querySelector("#totalExpenditure");
   const under18 = document.querySelector("#under18");
   const averageAge = document.querySelector("#averageAge");
-  
-  if(innerUsers.length > 0) {
+
+  if (innerUsers.length > 0) {
     let allTotal = 0;
     let under18Count = 0;
-    let allAge = 0
-    innerUsers.forEach(user => {
-      allTotal += user.totalSpending;
-
-      allAge += user.age;
-      if(user.age < 18) {
+    let allAge = 0;
+    
+    innerUsers.forEach((user) => {
+      allTotal += Number(user.totalSpending);
+      allAge += Number(user.age);
+      if (Number(user.age) < 18) {
         under18Count++;
       }
     });
     allTotal = allTotal / innerUsers.length;
     allAge = allAge / innerUsers.length;
-    toplamHarcama.innerText = (allTotal + "₺");
+    totalExpenditure.innerText = allTotal + "$";
     under18.innerHTML = under18Count;
-    averageAge.innerText = Math.round(allAge)
+    averageAge.innerText = Math.round(allAge);
   }
 
-  if(!searchValue) {
+  if (!searchValue) {
     localStorage.setItem("storage::users", JSON.stringify(innerUsers));
   }
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-  let storedUsers = JSON.parse(
-    localStorage.getItem("storage::users") || "[]"
-  );
+  let storedUsers = JSON.parse(localStorage.getItem("storage::users") || "[]");
   if (storedUsers.length > 0) {
     users = storedUsers;
   } else {
@@ -194,7 +222,14 @@ document.addEventListener("DOMContentLoaded", () => {
     ];
   }
 
-  searchInput.addEventListener("input", readAll)
+  console.log(users);
+  
+
+  searchInput.addEventListener("input", readAll);
 
   readAll();
 });
+
+ 
+
+
